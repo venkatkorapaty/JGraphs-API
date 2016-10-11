@@ -1,4 +1,4 @@
-package Vertices;
+package main.Vertices;
 
 public class Vertex {
 
