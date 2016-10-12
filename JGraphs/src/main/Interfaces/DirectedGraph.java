@@ -8,7 +8,7 @@ package main.Interfaces;
  * @param <V>
  * @param <E>
  */
-public interface IDirectedGraph<V, E> {
+public interface DirectedGraph<V, E> {
 
 	/**
 	 * Gets the vertex that the directed edge starts from

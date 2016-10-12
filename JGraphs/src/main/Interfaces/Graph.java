@@ -11,7 +11,7 @@ import main.AbstractDataTypes.*;
  * @param <V>
  * @param <E>
  */
-public interface IGraph<V, E> {
+public interface Graph<V, E> {
 
 	/**
 	 * For directed graphs, it returns the vertex at the tail of the edge.

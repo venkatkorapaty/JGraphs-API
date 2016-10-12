@@ -7,7 +7,7 @@ package main.Interfaces;
  * @param <V>
  * @param <E>
  */
-public interface IUndirectedGraph<V, E> {
+public interface UndirectedGraph<V, E> {
 
 	/**
 	 * Gets the degree of a vertex.

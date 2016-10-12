@@ -1,20 +1,21 @@
 package main.Graphs;
 
 import java.util.*;
-import main.AbstractDataTypes.Tuple;
-import main.Interfaces.*;
 
-/**
- * An undirected, unweighted graph.
- * @author Venkat Korapaty
- * @since October 10th, 2016
- *
- * @param <V>
- * @param <E>
- */
-public class UndirectedGraph<V, E>
-	extends Graph<V, E>
-	implements IUndirectedGraph<V, E>{
+import main.Interfaces.*;
+import main.AbstractDataTypes.*;
+
+public class DiGraph<V, E>
+	extends DefaultGraph<V, E>
+	implements DirectedGraph<V, E> {
+	
+	Graph<V, E> graph;
+
+	@Override
+	public Tuple<V, V> getIncidenceVertices(E edge) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	@Override
 	public E getEdge(V source, V target) {
@@ -23,11 +24,12 @@ public class UndirectedGraph<V, E>
 	}
 
 	@Override
-	public Tuple<V, V> getIncidenceVertices(Object edge) {
+	public E getEdgeWeight(E edge) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	@Override
 	public boolean removeEdge(E edge) {
 		// TODO Auto-generated method stub
 		return false;
@@ -52,18 +54,6 @@ public class UndirectedGraph<V, E>
 	}
 
 	@Override
-	public E getEdgeWeight(E edge) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int degreeOf(V vertex) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
 	public boolean containsEdge(E edge) {
 		// TODO Auto-generated method stub
 		return false;
@@ -75,5 +65,28 @@ public class UndirectedGraph<V, E>
 		return false;
 	}
 
-	
+	@Override
+	public V getTailVertex(E edge) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public V getHeadVertex(E edge) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getOutDegree(V vertex) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getInDegree(V vertex) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
