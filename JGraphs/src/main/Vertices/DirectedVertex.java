@@ -2,20 +2,22 @@ package main.Vertices;
 
 import java.util.*;
 
+import main.Edges.Edge;
+
 /**
  * Vertex class used for directed graphs
  * @author Venkat Korapaty
  * @since October 12, 2016
  * @param <E>
  */
-public class DirectedVertex<E>
-	extends Vertex<E> {
+public class DirectedVertex
+	extends Vertex {
 
-	Set<E> outEdges;
-	Set<E> inEdges;
+	Set<Edge> outEdges;
+	Set<Edge> inEdges;
 
 	public DirectedVertex() {
-		this.outEdges = new HashSet<E>();
-		this.inEdges = new HashSet<E>();
+		this.outEdges = new HashSet<Edge>();
+		this.inEdges = new HashSet<Edge>();
 	}
 }

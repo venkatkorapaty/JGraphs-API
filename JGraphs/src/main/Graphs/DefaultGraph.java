@@ -16,6 +16,18 @@ public abstract class DefaultGraph<V, E>
 	public DefaultGraph() {
 		
 	}
+	/*
+	 * @graphRepresentation - representation of a graph in either
+	 *  adjacency matrix or adjacency list form
+	 *  
+	 * @type - either 0 or 1
+	 * 	0 indicates that @graphRepresentation is in adjacency matrix form
+	 *  1 indicates that @graphRepresentation is in adjacency list form
+	 *  
+	 * The method is intended to be used to easily convert an alternative
+	 * graph representation into an available format
+	 */
+	public abstract DefaultGraph<V, E> buildGraph(int[][] graphRepresentation, int type);
 	
 	/**
 	 * Tells you if the graph's edge set has an edge

@@ -89,4 +89,10 @@ public class DiGraph<V, E>
 		return 0;
 	}
 
+	@Override
+	public DefaultGraph<V, E> buildGraph(int[][] graphRepresentation, int type) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
