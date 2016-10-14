@@ -13,17 +13,24 @@ public class UndirectedVertex
 
 	Set<Edge> edges;
 
-	public UndirectedVertex(){
-		super();
-		this.edges = new HashSet<Edge>();
-	}
 
 	/**
 	 * Constructor for an undirected graph's vertices
-	 * @param data
+	 * @param id
 	 */
 	public UndirectedVertex(int id) {
 		super(id);
+		this.edges = new HashSet<Edge>();
+	}
+	
+	/**
+	 * Constructor for a vertex of an undirected graph
+	 * @param id
+	 * @param name
+	 */
+	public UndirectedVertex(int id, String name) {
+		super(id, name);
+		this.edges = new HashSet<Edge>();
 	}
 
 	/**

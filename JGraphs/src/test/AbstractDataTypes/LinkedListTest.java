@@ -8,17 +8,15 @@ import main.AbstractDataTypes.LinkedList;
 
 public class LinkedListTest {
 	
-	/*@Test
+	@Test
 	public void setUp() {
-		LinkedList<Integer> ll = new LinkedList<Integer>();
-		ll.addHead(1);
-		ll.addHead(2);
+
 	}
 	
 	@Test
 	public void tearDown() {
 		
-	}*/
+	}
 	
 	@Test
 	public void testRemoveHead() {

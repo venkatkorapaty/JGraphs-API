@@ -10,11 +10,8 @@ import main.AbstractDataTypesInterfaces.IGetID;
 public abstract class Vertex implements IGetID {
 
 	int id;
+	String name = null;
 	
-
-	public Vertex() {
-		
-	}
 
 	/**
 	 * Constructor for vertex with data
@@ -23,6 +20,11 @@ public abstract class Vertex implements IGetID {
 	public Vertex(int id) {
 		this.id = id;
 	}
+	
+	public Vertex(int id, String name) {
+		this.id = id;
+		this.name = name;
+	}
 
 	public int hashCode() {
 		return this.hashCode();
@@ -30,5 +32,9 @@ public abstract class Vertex implements IGetID {
 	
 	public int getID() {
 		return this.id;
+	}
+	
+	public String getName() {
+		return this.name;
 	}
 }

@@ -3,10 +3,9 @@
  */
 package main.AbstractDataTypes;
 
-import main.AbstractDataTypesInterfaces.IGetID;
 
 /**
- * @author Shaheer Haroon
+ * A class representing single nodes of a Linked List
  *
  */
 public class LinkedListNode<T> {
