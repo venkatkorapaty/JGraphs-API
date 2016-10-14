@@ -1,16 +1,17 @@
 package main.Edges;
 
 import main.AbstractDataTypes.Tuple;
+import main.Vertices.Vertex;
 
 /**
  * 
  * @author Venkat Korapaty
  * @since October 11, 2016
  */
-public class Edge<V> {
+public class Edge {
 
-	V v1;
-	V v2;
+	Vertex v1;
+	Vertex v2;
 	
 	public Edge() {
 		
@@ -21,7 +22,7 @@ public class Edge<V> {
 	 * @param v1
 	 * @param v2
 	 */
-	public Edge(V v1, V v2) {
+	public Edge(Vertex v1, Vertex v2) {
 		this.v1 = v1;
 		this.v2 = v2;
 	}
@@ -31,15 +32,15 @@ public class Edge<V> {
 	 * incident to.
 	 * @return Tuple<V, V>(v1, v2)
 	 */
-	public Tuple<V, V> getIncidenceVertices() {
-		return new Tuple<V, V>(this.v1, this.v2);
+	public Tuple<Vertex, Vertex> getIncidenceVertices() {
+		return new Tuple<Vertex, Vertex>(this.v1, this.v2);
 	}
 
 	/**
 	 * Gets the source vertex
 	 * @return V v1
 	 */
-	public V getSource() {
+	public Vertex getSource() {
 		return this.v1;
 	}
 
@@ -47,7 +48,7 @@ public class Edge<V> {
 	 * Gets the target vertex
 	 * @return V v2
 	 */
-	public V getTarget() {
+	public Vertex getTarget() {
 		return this.v2;
 	}
 }

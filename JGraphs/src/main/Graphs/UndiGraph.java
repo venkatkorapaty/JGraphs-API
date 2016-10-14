@@ -81,5 +81,11 @@ public class UndiGraph<V, E>
 		return false;
 	}
 
+	@Override
+	public DefaultGraph<V, E> buildGraph(int[][] graphRepresentation, int type) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 }

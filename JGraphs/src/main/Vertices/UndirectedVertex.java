@@ -1,28 +1,29 @@
 package main.Vertices;
 
 import java.util.*;
+import main.Edges.*;
 
 /**
  * Vertex class used for undirected graphs
  * @author Venkat Korapaty
  * @since October 12, 2016
  */
-public class UndirectedVertex<E>
-	extends Vertex<E>{
+public class UndirectedVertex
+	extends Vertex{
 
-	Set<E> edges;
+	Set<Edge> edges;
 
 	public UndirectedVertex(){
 		super();
-		this.edges = new HashSet<E>();
+		this.edges = new HashSet<Edge>();
 	}
 
 	/**
 	 * Constructor for an undirected graph's vertices
 	 * @param data
 	 */
-	public UndirectedVertex(Object data) {
-		super(data);
+	public UndirectedVertex(int id) {
+		super(id);
 	}
 
 	/**
@@ -32,7 +33,7 @@ public class UndirectedVertex<E>
 	 * @param edge
 	 * @return true/false
 	 */
-	public boolean addEdge(E edge) {
+	public boolean addEdge(Edge edge) {
 		if(!edges.contains(edge)) {
 			edges.add(edge);
 			return true;
@@ -46,7 +47,7 @@ public class UndirectedVertex<E>
 	 * @param edge
 	 * @return
 	 */
-	public boolean removeEdge(E edge) {
+	public boolean removeEdge(Edge edge) {
 		return edges.remove(edge);
 	}
 
@@ -58,11 +59,15 @@ public class UndirectedVertex<E>
 		return super.hashCode();
 	}
 
-	public Object getData() {
-		return this.data;
-	}
-
-	public Set<E> getEdges() {
+	public Set<Edge> getEdges() {
 		return edges;
+	}
+	
+	/*
+	 * IMPLEMENT ME
+	 * Should return a set of all vertices adjacent to this one
+	 */
+	public Set<Vertex> getNeighbours() {
+		throw new UnsupportedOperationException();
 	}
 }
