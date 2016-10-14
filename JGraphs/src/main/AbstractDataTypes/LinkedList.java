@@ -93,5 +93,11 @@ public class LinkedList<T> implements LinkedListInterface<T> {
 		return this.size == 0;
 	}
 
+	@Override
+	public int getSize() {
+		// TODO Auto-generated method stub
+		return this.size;
+	}
+
 
 }

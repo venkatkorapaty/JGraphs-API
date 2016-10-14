@@ -6,4 +6,5 @@ public interface LinkedListInterface<T> {
 	public T removeTail();
 	public void addHead(T item);
 	public boolean isEmpty();
+	public int getSize();
 }
