@@ -10,7 +10,7 @@ public class LinkedListTest {
 
 	@Test
 	public void setUp() {
-
+		// test comment
 	}
 
 	@Test
