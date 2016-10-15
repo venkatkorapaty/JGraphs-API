@@ -13,7 +13,7 @@ public class DefaultStack<T> implements Stack<T> {
 	public DefaultStack(T[] objects) {
 		elements = new DoublyLinkedList<T>();
 		for(T element : objects) {
-			elements.addHead(element);
+			elements.addTail(element);
 		}
 	}
 	
