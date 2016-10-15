@@ -1,6 +1,6 @@
 package main.Vertices;
 
-import main.AbstractDataTypesInterfaces.IGetID;
+import main.AbstractDataTypesInterfaces.*;
 
 /**
  * 
