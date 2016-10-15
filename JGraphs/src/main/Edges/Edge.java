@@ -12,10 +12,8 @@ public class Edge {
 
 	Vertex v1;
 	Vertex v2;
+	String name = null;
 	
-	public Edge() {
-		
-	}
 
 	/**
 	 * Constructor for an edge given the vertices
@@ -23,6 +21,17 @@ public class Edge {
 	 * @param v2
 	 */
 	public Edge(Vertex v1, Vertex v2) {
+		this.v1 = v1;
+		this.v2 = v2;
+	}
+	
+	/**
+	 * Overloaded constructor if user wants to name edge
+	 * @param v1
+	 * @param v2
+	 * @param name
+	 */
+	public Edge(Vertex v1, Vertex v2, String name) {
 		this.v1 = v1;
 		this.v2 = v2;
 	}

@@ -7,19 +7,17 @@ import org.junit.Test;
 import main.AbstractDataTypes.LinkedList;
 
 public class LinkedListTest {
-	
-	/*@Test
+
+	@Test
 	public void setUp() {
-		LinkedList<Integer> ll = new LinkedList<Integer>();
-		ll.addHead(1);
-		ll.addHead(2);
+		// test comment2
 	}
-	
+
 	@Test
 	public void tearDown() {
-		
-	}*/
-	
+
+	}
+
 	@Test
 	public void testRemoveHead() {
 		LinkedList<Integer> ll = new LinkedList<Integer>();
@@ -28,7 +26,7 @@ public class LinkedListTest {
 		Integer i = ll.removeHead();
 		assertEquals(Integer.valueOf(2), i);
 	}
-	
+
 	@Test
 	public void testRemoveTail() {
 		LinkedList<Integer> ll = new LinkedList<Integer>();

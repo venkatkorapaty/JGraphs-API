@@ -2,6 +2,12 @@ package main.AbstractDataTypes;
 
 import main.AbstractDataTypesInterfaces.LinkedListInterface;
 
+/**
+ * 
+ * Implementation of Linked List
+ *
+ * @param <T>
+ */
 public class LinkedList<T> implements LinkedListInterface<T> {
 	public LinkedListNode<T> head = null;
 	public LinkedListNode<T> tail = null;
@@ -14,7 +20,7 @@ public class LinkedList<T> implements LinkedListInterface<T> {
 	@Override
 	public void addHead(T item) {
 		// TODO Auto-generated method stub
-		LinkedListNode newNode = new LinkedListNode(item);
+		LinkedListNode<T> newNode = new LinkedListNode<T>(item);
 		if (this.size == 0) {
 			// list is empty
 			this.head = newNode;
@@ -32,7 +38,7 @@ public class LinkedList<T> implements LinkedListInterface<T> {
 	@Override
 	public void addTail(T item) {
 		// TODO Auto-generated method stub
-		LinkedListNode newNode = new LinkedListNode(item);
+		LinkedListNode<T> newNode = new LinkedListNode<T>(item);
 		if (isEmpty()) {
 			this.tail = newNode;
 			this.head = newNode;
@@ -85,6 +91,12 @@ public class LinkedList<T> implements LinkedListInterface<T> {
 	
 	public boolean isEmpty() {
 		return this.size == 0;
+	}
+
+	@Override
+	public int getSize() {
+		// TODO Auto-generated method stub
+		return this.size;
 	}
 
 
