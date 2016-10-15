@@ -1,10 +1,21 @@
 package main.AbstractDataTypes;
 
-import main.AbstractDataTypesInterfaces.StackInterface;
+import main.AbstractDataTypesInterfaces.*;
 
-public class Stack<T> implements StackInterface<T> {
+public class DefaultStack<T> implements Stack<T> {
 
 	LinkedList<T> elements;
+	
+	public DefaultStack() {
+		elements = new DoublyLinkedList<T>();
+	}
+	
+	public DefaultStack(T[] objects) {
+		elements = new DoublyLinkedList<T>();
+		for(T element : objects) {
+			elements.addHead(element);
+		}
+	}
 	
 	@Override
 	public T pop() {

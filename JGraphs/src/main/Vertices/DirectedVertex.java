@@ -31,8 +31,8 @@ public class DirectedVertex
 	 * @param id
 	 * @param name
 	 */
-	public DirectedVertex(int id, String name) {
-		super(id, name);
+	public DirectedVertex(int id, Object data) {
+		super(id, data);
 		this.outEdges = new HashSet<Edge>();
 		this.inEdges = new HashSet<Edge>();
 	}

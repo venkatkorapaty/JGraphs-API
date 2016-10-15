@@ -7,10 +7,10 @@ import main.AbstractDataTypesInterfaces.*;
  * @author Venkat Korapaty
  * @since October 11, 2016
  */
-public abstract class Vertex implements IGetID {
+public abstract class Vertex implements Id {
 
 	int id;
-	String name = null;
+	Object data;
 	
 
 	/**
@@ -19,15 +19,26 @@ public abstract class Vertex implements IGetID {
 	 */
 	public Vertex(int id) {
 		this.id = id;
+		data = null;
 	}
 	
-	public Vertex(int id, String name) {
+	public Vertex(int id, Object data) {
 		this.id = id;
-		this.name = name;
+		this.data = data;
 	}
 
 	public int hashCode() {
 		return this.hashCode();
+	}
+	
+	/**
+	 * Not final decision:
+	 * 2 vertices are equal if they have the same data
+	 * @param other
+	 * @return
+	 */
+	public boolean equals(Vertex other) {
+		return this.data.equals(other.data);
 	}
 	
 	public int getID() {
@@ -35,6 +46,6 @@ public abstract class Vertex implements IGetID {
 	}
 	
 	public String getName() {
-		return this.name;
+		return data.toString();
 	}
 }

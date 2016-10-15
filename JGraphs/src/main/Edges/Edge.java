@@ -1,6 +1,6 @@
 package main.Edges;
 
-import main.AbstractDataTypes.Tuple;
+import main.AbstractDataTypes.DefaultTuple;
 import main.Vertices.Vertex;
 
 /**
@@ -41,13 +41,13 @@ public class Edge {
 	 * incident to.
 	 * @return Tuple<V, V>(v1, v2)
 	 */
-	public Tuple<Vertex, Vertex> getIncidenceVertices() {
-		return new Tuple<Vertex, Vertex>(this.v1, this.v2);
+	public DefaultTuple<Vertex, Vertex> getIncidenceVertices() {
+		return new DefaultTuple<Vertex, Vertex>(this.v1, this.v2);
 	}
 
 	/**
 	 * Gets the source vertex
-	 * @return V v1
+	 * @return source vertex
 	 */
 	public Vertex getSource() {
 		return this.v1;
@@ -55,7 +55,7 @@ public class Edge {
 
 	/**
 	 * Gets the target vertex
-	 * @return V v2
+	 * @return target vertex
 	 */
 	public Vertex getTarget() {
 		return this.v2;
