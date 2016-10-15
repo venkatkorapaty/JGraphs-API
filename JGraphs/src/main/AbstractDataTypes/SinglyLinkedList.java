@@ -1,6 +1,6 @@
 package main.AbstractDataTypes;
 
-import main.AbstractDataTypesInterfaces.LinkedListInterface;
+import main.AbstractDataTypesInterfaces.LinkedList;
 
 /**
  * 
@@ -8,12 +8,12 @@ import main.AbstractDataTypesInterfaces.LinkedListInterface;
  *
  * @param <T>
  */
-public class LinkedList<T> implements LinkedListInterface<T> {
+public class SinglyLinkedList<T> implements LinkedList<T> {
 	public LinkedListNode<T> head = null;
 	public LinkedListNode<T> tail = null;
 	public int size = 0;
 	
-	public LinkedList() {
+	public SinglyLinkedList() {
 		
 	}
 	

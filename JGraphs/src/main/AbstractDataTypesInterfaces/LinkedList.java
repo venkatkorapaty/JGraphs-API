@@ -1,6 +1,6 @@
 package main.AbstractDataTypesInterfaces;
 
-public interface LinkedListInterface<T> {
+public interface LinkedList<T> {
 	public void addTail(T item);
 	public T removeHead();
 	public T removeTail();

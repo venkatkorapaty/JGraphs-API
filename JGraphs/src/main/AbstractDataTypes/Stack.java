@@ -1,10 +1,21 @@
 package main.AbstractDataTypes;
 
-import main.AbstractDataTypesInterfaces.StackInterface;
+import main.AbstractDataTypesInterfaces.*;
 
 public class Stack<T> implements StackInterface<T> {
 
 	LinkedList<T> elements;
+	
+	public Stack() {
+		elements = new SinglyLinkedList<T>();
+	}
+	
+	public Stack(T[] objects) {
+		elements = new SinglyLinkedList<T>();
+		for(T element : objects) {
+			elements.addHead(element);
+		}
+	}
 	
 	@Override
 	public T pop() {
