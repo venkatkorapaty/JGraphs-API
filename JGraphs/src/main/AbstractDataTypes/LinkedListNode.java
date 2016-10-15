@@ -6,7 +6,8 @@ package main.AbstractDataTypes;
 
 /**
  * A class representing single nodes of a Linked List
- *
+ * @author Shaheer Haroon
+ * @param T
  */
 public class LinkedListNode<T> {
 	protected T data = null;
