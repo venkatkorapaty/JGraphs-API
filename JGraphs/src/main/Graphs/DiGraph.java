@@ -12,7 +12,7 @@ public class DiGraph<V, E>
 	Graph<V, E> graph;
 
 	@Override
-	public Tuple<V, V> getIncidenceVertices(E edge) {
+	public DefaultTuple<V, V> getIncidenceVertices(E edge) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -87,6 +87,12 @@ public class DiGraph<V, E>
 	public int getInDegree(V vertex) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public DefaultGraph<V, E> buildGraph(int[][] graphRepresentation, int type) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

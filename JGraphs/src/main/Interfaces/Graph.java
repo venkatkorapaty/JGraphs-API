@@ -20,7 +20,7 @@ public interface Graph<V, E> {
 	 * @param edge
 	 * @return the source vertex for the edge
 	 */
-	Tuple<V, V> getIncidenceVertices(E edge);
+	DefaultTuple<V, V> getIncidenceVertices(E edge);
 	
 	/**
 	 * Takes a starting and finish vertex, and returns an edge between them.
