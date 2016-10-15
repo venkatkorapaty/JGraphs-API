@@ -1,5 +1,5 @@
 package main.AbstractDataTypesInterfaces;
 
-public interface IGetID {
+public interface Id {
 	public int getID();
 }

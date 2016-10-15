@@ -1,6 +1,9 @@
 package main.Graphs;
 
+import main.AbstractDataTypes.DefaultTuple;
 import main.Interfaces.*;
+
+import java.util.*;
 
 /**
  * 
@@ -10,25 +13,22 @@ import main.Interfaces.*;
  * @param <V>
  * @param <E>
  */
-public abstract class DefaultGraph<V, E> 
-	implements Graph<V, E> {
+public class DefaultGraph<V, E> 
+	extends AbstractGraph<V, E> {
+	
+	Set<V> vertices;
+	Set<E> edges;
 	
 	public DefaultGraph() {
 		
 	}
-	/*
-	 * @graphRepresentation - representation of a graph in either
-	 *  adjacency matrix or adjacency list form
-	 *  
-	 * @type - either 0 or 1
-	 * 	0 indicates that @graphRepresentation is in adjacency matrix form
-	 *  1 indicates that @graphRepresentation is in adjacency list form
-	 *  
-	 * The method is intended to be used to easily convert an alternative
-	 * graph representation into an available format
-	 */
-	public abstract DefaultGraph<V, E> buildGraph(int[][] graphRepresentation, int type);
-	
+
+	@Override
+	public Graph<V, E> buildGraph(int[][] graphRepresentation, int type) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	/**
 	 * Tells you if the graph's edge set has an edge
 	 * with v1 and v2 as the ends of the edge
@@ -46,12 +46,52 @@ public abstract class DefaultGraph<V, E>
 	 * @return true/false
 	 */
 	public boolean containsVertex(V v1) {
-		return getVertices().contains(v1);
+		return vertices.contains(v1);
 	}
 
-	//public boolean removeEdge(E edge) {
+	@Override
+	public DefaultTuple<V, V> getIncidenceVertices(E edge) {
 		// TODO Auto-generated method stub
-	//	return false;
-	//}
+		return null;
+	}
 
+	@Override
+	public E getEdge(V source, V target) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public E getEdgeWeight(E edge) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean removeEdge(E edge) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean removeVertex(V vertex) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Set<V> getVertices() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<E> getEdges() {
+		return edges;
+	}
+
+	@Override
+	public boolean containsEdge(E edge) {
+		return edges.contains(edge);
+	}
 }

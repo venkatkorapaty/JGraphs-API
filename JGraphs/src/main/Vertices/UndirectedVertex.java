@@ -2,6 +2,8 @@ package main.Vertices;
 
 import java.util.*;
 import main.Edges.*;
+import main.AbstractDataTypes.*;
+import main.AbstractDataTypesInterfaces.*;
 
 /**
  * Vertex class used for undirected graphs
@@ -28,8 +30,8 @@ public class UndirectedVertex
 	 * @param id
 	 * @param name
 	 */
-	public UndirectedVertex(int id, String name) {
-		super(id, name);
+	public UndirectedVertex(int id, Object data) {
+		super(id, data);
 		this.edges = new HashSet<Edge>();
 	}
 
@@ -66,15 +68,32 @@ public class UndirectedVertex
 		return super.hashCode();
 	}
 
+	/**
+	 * Gets the set of edges
+	 * @return edge set
+	 */
 	public Set<Edge> getEdges() {
 		return edges;
 	}
-	
-	/*
-	 * IMPLEMENT ME
-	 * Should return a set of all vertices adjacent to this one
+
+	/**
+	 * Gets all the vertices adjacent to this.
+	 * @return Set of adjacent vertices
 	 */
 	public Set<Vertex> getNeighbours() {
-		throw new UnsupportedOperationException();
+		Set<Vertex> adjacentVertices = new HashSet<Vertex>();
+
+		for(Edge e : edges) {
+			adjacentVertices.add(getAdjacentVertex(e));
+		}
+		return adjacentVertices;
+	}
+
+	private Vertex getAdjacentVertex(Edge e) {
+		Tuple<Vertex, Vertex> incidentVertices = e.getIncidenceVertices();
+		if (this.equals(incidentVertices.getRight()))
+			return incidentVertices.getLeft();
+		else
+			return incidentVertices.getRight();
 	}
 }

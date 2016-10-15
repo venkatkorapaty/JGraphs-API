@@ -20,7 +20,7 @@ public class UndiGraph<V, E>
 	Graph<V, E> graph;
 	
 	public UndiGraph() {
-		
+		graph = new UndiGraph<V, E>();
 	}
 
 	@Override
@@ -30,7 +30,7 @@ public class UndiGraph<V, E>
 	}
 
 	@Override
-	public Tuple<V, V> getIncidenceVertices(E edge) {
+	public DefaultTuple<V, V> getIncidenceVertices(E edge) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -47,15 +47,21 @@ public class UndiGraph<V, E>
 	}
 
 	@Override
+	/**
+	 * Gets the graph's vertex set
+	 * @return set of vertices
+	 */
 	public Set<V> getVertices() {
-		// TODO Auto-generated method stub
-		return null;
+		return graph.getVertices();
 	}
 
 	@Override
+	/**
+	 * Gets the graph's edge set
+	 * @return set of edges
+	 */
 	public Set<E> getEdges() {
-		// TODO Auto-generated method stub
-		return null;
+		return graph.getEdges();
 	}
 
 	@Override

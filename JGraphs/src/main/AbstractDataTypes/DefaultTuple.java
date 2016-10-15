@@ -1,5 +1,7 @@
 package main.AbstractDataTypes;
 
+import main.AbstractDataTypesInterfaces.*;
+
 /**
  * 
  * @author Venkat Korapaty
@@ -8,12 +10,13 @@ package main.AbstractDataTypes;
  * @param <X>
  * @param <Y>
  */
-public class Tuple<X, Y> {
+public class DefaultTuple<X, Y> 
+	implements Tuple<X, Y> {
 
 	public X left;
 	public Y right;
 	
-	public Tuple(X left, Y right) {
+	public DefaultTuple(X left, Y right) {
 		this.left = left;
 		this.right = right;
 	}

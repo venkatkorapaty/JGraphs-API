@@ -8,12 +8,12 @@ import main.AbstractDataTypesInterfaces.LinkedList;
  *
  * @param <T>
  */
-public class SinglyLinkedList<T> implements LinkedList<T> {
+public class DoublyLinkedList<T> implements LinkedList<T> {
 	public LinkedListNode<T> head = null;
 	public LinkedListNode<T> tail = null;
 	public int size = 0;
 	
-	public SinglyLinkedList() {
+	public DoublyLinkedList() {
 		
 	}
 	

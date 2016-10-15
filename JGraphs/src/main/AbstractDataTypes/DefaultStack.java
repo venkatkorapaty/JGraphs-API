@@ -2,16 +2,16 @@ package main.AbstractDataTypes;
 
 import main.AbstractDataTypesInterfaces.*;
 
-public class Stack<T> implements StackInterface<T> {
+public class DefaultStack<T> implements Stack<T> {
 
 	LinkedList<T> elements;
 	
-	public Stack() {
-		elements = new SinglyLinkedList<T>();
+	public DefaultStack() {
+		elements = new DoublyLinkedList<T>();
 	}
 	
-	public Stack(T[] objects) {
-		elements = new SinglyLinkedList<T>();
+	public DefaultStack(T[] objects) {
+		elements = new DoublyLinkedList<T>();
 		for(T element : objects) {
 			elements.addHead(element);
 		}

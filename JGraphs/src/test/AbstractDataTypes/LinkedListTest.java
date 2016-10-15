@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import main.AbstractDataTypes.SinglyLinkedList;
+import main.AbstractDataTypes.DoublyLinkedList;
 
 public class LinkedListTest {
 
@@ -20,7 +20,7 @@ public class LinkedListTest {
 
 	@Test
 	public void testRemoveHead() {
-		SinglyLinkedList<Integer> ll = new SinglyLinkedList<Integer>();
+		DoublyLinkedList<Integer> ll = new DoublyLinkedList<Integer>();
 		ll.addHead(1);
 		ll.addHead(2);
 		Integer i = ll.removeHead();
@@ -29,7 +29,7 @@ public class LinkedListTest {
 
 	@Test
 	public void testRemoveTail() {
-		SinglyLinkedList<Integer> ll = new SinglyLinkedList<Integer>();
+		DoublyLinkedList<Integer> ll = new DoublyLinkedList<Integer>();
 		ll.addHead(1);
 		ll.addHead(2);
 		Integer i = ll.removeTail();
