@@ -1,7 +1,8 @@
 package main.Graphs;
 
 import java.util.*;
-import main.AbstractDataTypes.Tuple;
+
+import main.AbstractDataTypes.*;
 import main.Interfaces.*;
 
 /**
@@ -29,7 +30,7 @@ public class UndiGraph<V, E>
 	}
 
 	@Override
-	public Tuple<V, V> getIncidenceVertices(Object edge) {
+	public Tuple<V, V> getIncidenceVertices(E edge) {
 		// TODO Auto-generated method stub
 		return null;
 	}
