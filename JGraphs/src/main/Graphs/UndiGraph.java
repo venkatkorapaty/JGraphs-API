@@ -15,7 +15,7 @@ import main.Interfaces.*;
  */
 public class UndiGraph<V, E>
 	extends DefaultGraph<V, E>
-	implements UndirectedGraph<V, E>{
+	implements UndirectedGraph<V, E> {
 
 	Graph<V, E> graph;
 	
@@ -25,12 +25,6 @@ public class UndiGraph<V, E>
 
 	@Override
 	public E getEdge(V source, V target) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public DefaultTuple<V, V> getIncidenceVertices(E edge) {
 		// TODO Auto-generated method stub
 		return null;
 	}
