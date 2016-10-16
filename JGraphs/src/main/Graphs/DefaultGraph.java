@@ -16,8 +16,8 @@ import java.util.*;
 public class DefaultGraph<V, E> 
 	extends AbstractGraph<V, E> {
 	
-	Set<V> vertices;
-	Set<E> edges;
+	private Set<V> vertices;
+	private Set<E> edges;
 	
 	public DefaultGraph() {
 		
