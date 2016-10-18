@@ -12,12 +12,6 @@ public class DiGraph<V, E>
 	Graph<V, E> graph;
 
 	@Override
-	public DefaultTuple<V, V> getIncidenceVertices(E edge) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public E getEdge(V source, V target) {
 		// TODO Auto-generated method stub
 		return null;

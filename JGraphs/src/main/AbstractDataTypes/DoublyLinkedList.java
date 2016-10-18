@@ -5,7 +5,7 @@ import main.AbstractDataTypesInterfaces.LinkedList;
 /**
  * 
  * Implementation of Linked List
- *
+ * @author Shaheer Haroon
  * @param <T>
  */
 public class DoublyLinkedList<T> implements LinkedList<T> {
@@ -16,7 +16,11 @@ public class DoublyLinkedList<T> implements LinkedList<T> {
 	public DoublyLinkedList() {
 		
 	}
-	
+
+	/**
+	 * Adds item to linked list at the head
+	 * @param item
+	 */
 	@Override
 	public void addHead(T item) {
 		// TODO Auto-generated method stub
@@ -35,6 +39,11 @@ public class DoublyLinkedList<T> implements LinkedList<T> {
 		// update size
 		this.size++;
 	}
+
+	/**
+	 * Adds item at tail of linked list
+	 * @param item
+	 */
 	@Override
 	public void addTail(T item) {
 		// TODO Auto-generated method stub
@@ -52,6 +61,11 @@ public class DoublyLinkedList<T> implements LinkedList<T> {
 		// update size
 		this.size++;
 	}
+
+	/**
+	 * Deletes item at head of linked list
+	 * @return object at head, null if empty
+	 */
 	@Override
 	public T removeHead() {
 		// TODO Auto-generated method stub
@@ -70,6 +84,11 @@ public class DoublyLinkedList<T> implements LinkedList<T> {
 		this.size--;
 		return item;
 	}
+
+	/**
+	 * Deletes object at tail of linked list
+	 * @return object at tail,null if empty
+	 */
 	@Override
 	public T removeTail() {
 		// TODO Auto-generated method stub
@@ -88,12 +107,20 @@ public class DoublyLinkedList<T> implements LinkedList<T> {
 		this.size--;
 		return item;
 	}
-	
+
+	/**
+	 * Checks if list is empty, true if empty, false otherwise
+	 * @return true/false
+	 */
 	public boolean isEmpty() {
 		return this.size == 0;
 	}
 
 	@Override
+	/**
+	 * Gets size of linked list
+	 * @return int, size of list
+	 */
 	public int getSize() {
 		// TODO Auto-generated method stub
 		return this.size;
