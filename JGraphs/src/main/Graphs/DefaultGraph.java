@@ -1,8 +1,7 @@
 package main.Graphs;
 
-import main.AbstractDataTypes.DefaultTuple;
+import main.AbstractDataTypes.*;
 import main.Interfaces.*;
-
 import java.util.*;
 
 /**
@@ -16,8 +15,9 @@ import java.util.*;
 public class DefaultGraph<V, E> 
 	extends AbstractGraph<V, E> {
 	
-	Set<V> vertices;
-	Set<E> edges;
+	private Set<V> vertices;
+	private Set<E> edges;
+	private EdgeVertexMap<V, E> edgesAndVertices;
 	
 	public DefaultGraph() {
 		
@@ -50,15 +50,8 @@ public class DefaultGraph<V, E>
 	}
 
 	@Override
-	public DefaultTuple<V, V> getIncidenceVertices(E edge) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public E getEdge(V source, V target) {
-		// TODO Auto-generated method stub
-		return null;
+		return edgesAndVertices.getEdge(source, target);
 	}
 
 	@Override
@@ -75,14 +68,13 @@ public class DefaultGraph<V, E>
 
 	@Override
 	public boolean removeVertex(V vertex) {
-		// TODO Auto-generated method stub
+		// TODO
 		return false;
 	}
 
 	@Override
 	public Set<V> getVertices() {
-		// TODO Auto-generated method stub
-		return null;
+		return vertices;
 	}
 
 	@Override

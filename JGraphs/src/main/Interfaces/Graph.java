@@ -14,15 +14,6 @@ import main.AbstractDataTypes.*;
 public interface Graph<V, E> {
 
 	/**
-	 * For directed graphs, it returns the vertex at the tail of the edge.
-	 * For undirected graphs, the tuple's left will be the tail vertex and
-	 * the tuple's right will be the head vertex.
-	 * @param edge
-	 * @return the source vertex for the edge
-	 */
-	DefaultTuple<V, V> getIncidenceVertices(E edge);
-	
-	/**
 	 * Takes a starting and finish vertex, and returns an edge between them.
 	 * Returns null if such an edge does not exist, or if any of the parameters are null.
 	 * @param source
