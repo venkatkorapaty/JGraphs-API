@@ -24,7 +24,7 @@ public class UndiGraph<V, E>
 	}
 
 	@Override
-	public E getEdge(V source, V target) {
+	public List<E> getEdge(V source, V target) {
 		// TODO Auto-generated method stub
 		return null;
 	}

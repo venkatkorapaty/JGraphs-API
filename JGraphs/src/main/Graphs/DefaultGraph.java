@@ -1,6 +1,7 @@
 package main.Graphs;
 
 import main.AbstractDataTypes.*;
+import main.AbstractDataTypesInterfaces.*;
 import main.Interfaces.*;
 import java.util.*;
 
@@ -17,7 +18,7 @@ public class DefaultGraph<V, E>
 	
 	private Set<V> vertices;
 	private Set<E> edges;
-	private EdgeVertexMap<V, E> edgesAndVertices;
+	private EdgeVertexLink<V, E> edgesAndVertices;
 	
 	public DefaultGraph() {
 		

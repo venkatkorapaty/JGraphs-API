@@ -20,7 +20,7 @@ public interface Graph<V, E> {
 	 * @param target
 	 * @return the edge connecting source and target, should one exist
 	 */
-	E getEdge(V source, V target);
+	List<E> getEdge(V source, V target);
 	
 	/**
 	 * Gets the weight of edge
