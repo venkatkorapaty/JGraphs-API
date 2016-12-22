@@ -38,7 +38,12 @@ public class DefaultGraph<V, E>
 	 * @return true/false
 	 */
 	public boolean containsEdge(V v1, V v2) {
-		return getEdge(v1, v2) != null;
+		List<E> tempEdges = getEdge(v1, v2);
+		if (tempEdges != null) {
+			if (tempEdges.size() > 0)
+				return true;
+		}
+		return false;
 	}
 	
 	/**

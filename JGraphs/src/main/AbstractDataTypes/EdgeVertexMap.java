@@ -24,12 +24,12 @@ public class EdgeVertexMap<V, E>
 	}
 
 	public void addEdge(V v1, V v2, E edge) {
-		List<E> temp_edges = edgesAndVertices.get(new DefaultTuple<V, V>(v1, v2));
-		if (temp_edges == null) {
+		List<E> tempEdges = edgesAndVertices.get(new DefaultTuple<V, V>(v1, v2));
+		if (tempEdges == null) {
 			edgesAndVertices.put(new DefaultTuple<V, V>(v1, v2), new ArrayList<E>(Arrays.asList(edge)));
 		}
 		else {
-			temp_edges.add(edge);
+			tempEdges.add(edge);
 		}
 	}
 
