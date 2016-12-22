@@ -7,7 +7,8 @@ import main.AbstractDataTypesInterfaces.*;
  * @author Venkat Korapaty
  * @since October 11, 2016
  */
-public abstract class Vertex implements Id {
+public abstract class Vertex
+	implements Id {
 
 	int id;
 	Object data;

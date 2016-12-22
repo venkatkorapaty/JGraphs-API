@@ -28,4 +28,11 @@ public class DefaultTuple<X, Y>
 	public Y getRight() {
 		return this.right;
 	}
+
+	public boolean equals(Tuple other) {
+		if (this.left == other.getLeft() && this.right == other.getRight()) {
+			return true;
+		}
+		return false;
+	}
 }
