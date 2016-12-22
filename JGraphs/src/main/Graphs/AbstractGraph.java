@@ -6,7 +6,7 @@ import main.Edges.Edge;
 import main.Interfaces.*;
 import main.Vertices.*;
 
-public abstract class AbstractGraph<V, E extends IncidentToEdge>
+public abstract class AbstractGraph<V, E>
 	implements Graph<V, E> {
 
 	/**

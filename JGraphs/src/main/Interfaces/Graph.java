@@ -37,7 +37,7 @@ public interface Graph<V, E> {
 	 * @param edge
 	 * @return true/false
 	 */
-	boolean removeEdge(E edge);
+	boolean removeEdge(Edge edge);
 	
 	/**
 	 * Returns true if the vertex is in the graph; the vertex is removed

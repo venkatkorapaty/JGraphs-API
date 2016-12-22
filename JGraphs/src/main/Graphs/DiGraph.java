@@ -6,7 +6,7 @@ import main.AbstractDataTypes.*;
 import main.Vertices.*;
 import main.Edges.*;
 
-public class DiGraph<V, E extends IncidentToEdge>
+public class DiGraph<V, E>
 	extends DefaultGraph<V, E>
 	implements DirectedGraph<V, E> {
 	
@@ -25,7 +25,7 @@ public class DiGraph<V, E extends IncidentToEdge>
 	}
 
 	@Override
-	public boolean removeEdge(E edge) {
+	public boolean removeEdge(Edge edge) {
 		// TODO Auto-generated method stub
 		return false;
 	}

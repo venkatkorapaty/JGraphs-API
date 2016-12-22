@@ -14,7 +14,7 @@ import main.Vertices.*;
  * @param <V>
  * @param <E>
  */
-public class UndiGraph<V, E extends IncidentToEdge>
+public class UndiGraph<V, E>
 	extends DefaultGraph<V, E>
 	implements UndirectedGraph<V, E> {
 

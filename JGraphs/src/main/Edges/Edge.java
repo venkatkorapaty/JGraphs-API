@@ -9,8 +9,7 @@ import main.Interfaces.*;
  * @author Venkat Korapaty
  * @since October 11, 2016
  */
-public class Edge
-	implements IncidentToEdge {
+public class Edge {
 
 	Vertex v1;
 	Vertex v2;

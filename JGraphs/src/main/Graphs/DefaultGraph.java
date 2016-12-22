@@ -16,7 +16,7 @@ import java.util.*;
  * @param <V>
  * @param <E>
  */
-public class DefaultGraph<V, E extends IncidentToEdge> 
+public class DefaultGraph<V, E> 
 	extends AbstractGraph<V, E> {
 	
 	private Map<Object, Vertex> vertices;
@@ -70,7 +70,7 @@ public class DefaultGraph<V, E extends IncidentToEdge>
 	}
 
 	@Override
-	public boolean removeEdge(E edge) {
+	public boolean removeEdge(Edge edge) {
 		Tuple<Vertex, Vertex> incidentVertices = edge.getIncidentVertices();
 		edges.remove(edge);
 		// TODO: add "removeEdge" function to EdgeVertexLink
