@@ -1,6 +1,7 @@
 package main.AbstractDataTypesInterfaces;
 
 import java.util.*;
+import main.Edges.*;
 
 /**
  * The interface to link vertex pairs and edges
@@ -15,7 +16,7 @@ public interface EdgeVertexLink<V, E> {
 	 * @param v1
 	 * @param v2
 	 */
-	void addEdge(V v1, V v2, E edge);
+	void addEdge(V v1, V v2, Edge edge);
 
 	/**
 	 * Gets the edge for 2 vertices.
@@ -24,7 +25,7 @@ public interface EdgeVertexLink<V, E> {
 	 * @param v2
 	 * @return edge incident to source and target vertices
 	 */
-	List<E> getEdge(V v1, V v2);
+	List<Edge> getEdge(V v1, V v2);
 
 	boolean removeVertex(V v1);
 }

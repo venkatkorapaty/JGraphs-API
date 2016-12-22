@@ -1,8 +1,12 @@
 package main.Graphs;
 
-import main.Interfaces.Graph;
+import java.util.List;
 
-public abstract class AbstractGraph<V, E>
+import main.Edges.Edge;
+import main.Interfaces.*;
+import main.Vertices.*;
+
+public abstract class AbstractGraph<V, E extends IncidentToEdge>
 	implements Graph<V, E> {
 
 	/**
@@ -25,7 +29,7 @@ public abstract class AbstractGraph<V, E>
 	 * @param v2
 	 * @return true/false
 	 */
-	public boolean containsEdge(V v1, V v2) {
+	public boolean containsEdge(Vertex v1, Vertex v2) {
 		return getEdge(v1, v2) != null;
 	}
 	
@@ -34,7 +38,9 @@ public abstract class AbstractGraph<V, E>
 	 * @param v1
 	 * @return true/false
 	 */
-	public boolean containsVertex(V v1) {
-		return getVertices().contains(v1);
+	public boolean containsVertex(Vertex v1) {
+		return getVertices().containsValue(v1);
 	}
+
+	public abstract List<Edge> getEdge(Vertex source, Vertex target);
 }

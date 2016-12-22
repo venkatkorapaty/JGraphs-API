@@ -1,9 +1,10 @@
 package main.Graphs;
 
 import java.util.*;
-
 import main.AbstractDataTypes.*;
 import main.Interfaces.*;
+import main.Edges.*;
+import main.Vertices.*;
 
 /**
  * An undirected, unweighted graph.
@@ -13,7 +14,7 @@ import main.Interfaces.*;
  * @param <V>
  * @param <E>
  */
-public class UndiGraph<V, E>
+public class UndiGraph<V, E extends IncidentToEdge>
 	extends DefaultGraph<V, E>
 	implements UndirectedGraph<V, E> {
 
@@ -24,7 +25,7 @@ public class UndiGraph<V, E>
 	}
 
 	@Override
-	public List<E> getEdge(V source, V target) {
+	public List<Edge> getEdge(Vertex source, Vertex target) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -45,7 +46,7 @@ public class UndiGraph<V, E>
 	 * Gets the graph's vertex set
 	 * @return set of vertices
 	 */
-	public Set<V> getVertices() {
+	public Map<Object, Vertex> getVertices() {
 		return graph.getVertices();
 	}
 
@@ -54,14 +55,14 @@ public class UndiGraph<V, E>
 	 * Gets the graph's edge set
 	 * @return set of edges
 	 */
-	public Set<E> getEdges() {
+	public Set<Edge> getEdges() {
 		return graph.getEdges();
 	}
 
 	@Override
-	public E getEdgeWeight(E edge) {
+	public double getEdgeWeight(E edge) {
 		// TODO Auto-generated method stub
-		return null;
+		return 0.0;
 	}
 
 	@Override

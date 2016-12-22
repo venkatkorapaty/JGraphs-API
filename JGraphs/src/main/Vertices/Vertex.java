@@ -45,7 +45,11 @@ public abstract class Vertex
 	public int getID() {
 		return this.id;
 	}
-	
+
+	public Object getData() {
+		return this.data;
+	}
+
 	public String getName() {
 		return data.toString();
 	}

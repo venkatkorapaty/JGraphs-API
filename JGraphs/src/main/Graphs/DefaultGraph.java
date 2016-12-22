@@ -3,6 +3,9 @@ package main.Graphs;
 import main.AbstractDataTypes.*;
 import main.AbstractDataTypesInterfaces.*;
 import main.Interfaces.*;
+import main.Vertices.Vertex;
+import main.Edges.*;
+
 import java.util.*;
 
 /**
@@ -13,15 +16,17 @@ import java.util.*;
  * @param <V>
  * @param <E>
  */
-public class DefaultGraph<V, E> 
+public class DefaultGraph<V, E extends IncidentToEdge> 
 	extends AbstractGraph<V, E> {
 	
-	private Set<V> vertices;
-	private Set<E> edges;
-	private EdgeVertexLink<V, E> edgesAndVertices;
+	private Map<Object, Vertex> vertices;
+	private Set<Edge> edges;
+	private EdgeVertexLink<Vertex, Edge> edgesAndVertices;
 	
 	public DefaultGraph() {
-		
+		vertices = new HashMap<Object, Vertex>();
+		edges = new HashSet<Edge>();
+		edgesAndVertices = new EdgeVertexMap<Vertex, Edge>();
 	}
 
 	@Override
@@ -37,8 +42,8 @@ public class DefaultGraph<V, E>
 	 * @param v2
 	 * @return true/false
 	 */
-	public boolean containsEdge(V v1, V v2) {
-		List<E> tempEdges = getEdge(v1, v2);
+	public boolean containsEdge(Vertex v1, Vertex v2) {
+		List<Edge> tempEdges = getEdge(v1, v2);
 		if (tempEdges != null) {
 			if (tempEdges.size() > 0)
 				return true;
@@ -52,23 +57,23 @@ public class DefaultGraph<V, E>
 	 * @return true/false
 	 */
 	public boolean containsVertex(V v1) {
-		return vertices.contains(v1);
+		return vertices.containsValue(v1);
 	}
 
 	@Override
-	public List<E> getEdge(V source, V target) {
+	public List<Edge> getEdge(Vertex source, Vertex target) {
 		return edgesAndVertices.getEdge(source, target);
 	}
 
-	@Override
-	public E getEdgeWeight(E edge) {
-		// TODO Auto-generated method stub
-		return null;
+	public double getEdgeWeight(E edge) {
+		return 0.0;
 	}
 
 	@Override
 	public boolean removeEdge(E edge) {
-		// TODO Auto-generated method stub
+		Tuple<Vertex, Vertex> incidentVertices = edge.getIncidentVertices();
+		edges.remove(edge);
+		// TODO: add "removeEdge" function to EdgeVertexLink
 		return false;
 	}
 
@@ -79,12 +84,12 @@ public class DefaultGraph<V, E>
 	}
 
 	@Override
-	public Set<V> getVertices() {
+	public Map<Object, Vertex> getVertices() {
 		return vertices;
 	}
 
 	@Override
-	public Set<E> getEdges() {
+	public Set<Edge> getEdges() {
 		return edges;
 	}
 

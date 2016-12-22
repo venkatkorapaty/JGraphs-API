@@ -1,6 +1,7 @@
 package main.AbstractDataTypes;
 
 import java.util.*;
+import main.Edges.*;
 
 import main.AbstractDataTypesInterfaces.*;
 
@@ -17,16 +18,16 @@ public class EdgeVertexMap<V, E>
 	 * Using E as the generic doesn't support multiple edges between
 	 * the same 2 vertices
 	 */
-	Map<Tuple<V, V>, List<E>> edgesAndVertices;
+	Map<Tuple<V, V>, List<Edge>> edgesAndVertices;
 
 	public EdgeVertexMap() {
-		edgesAndVertices = new HashMap<Tuple<V, V>, List<E>> ();
+		edgesAndVertices = new HashMap<Tuple<V, V>, List<Edge>> ();
 	}
 
-	public void addEdge(V v1, V v2, E edge) {
-		List<E> tempEdges = edgesAndVertices.get(new DefaultTuple<V, V>(v1, v2));
+	public void addEdge(V v1, V v2, Edge edge) {
+		List<Edge> tempEdges = edgesAndVertices.get(new DefaultTuple<V, V>(v1, v2));
 		if (tempEdges == null) {
-			edgesAndVertices.put(new DefaultTuple<V, V>(v1, v2), new ArrayList<E>(Arrays.asList(edge)));
+			edgesAndVertices.put(new DefaultTuple<V, V>(v1, v2), new ArrayList<Edge>(Arrays.asList(edge)));
 		}
 		else {
 			tempEdges.add(edge);
@@ -39,7 +40,7 @@ public class EdgeVertexMap<V, E>
 	 * @param v2
 	 * @return edge
 	 */
-	public List<E> getEdge(V v1, V v2) {
+	public List<Edge> getEdge(V v1, V v2) {
 		return edgesAndVertices.get(new DefaultTuple<V, V>(v1, v2));
 	}
 

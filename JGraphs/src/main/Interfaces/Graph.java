@@ -2,6 +2,8 @@ package main.Interfaces;
 
 import java.util.*;
 import main.AbstractDataTypes.*;
+import main.Edges.*;
+import main.Vertices.*;
 
 /**
  * 
@@ -20,14 +22,14 @@ public interface Graph<V, E> {
 	 * @param target
 	 * @return the edge connecting source and target, should one exist
 	 */
-	List<E> getEdge(V source, V target);
+	List<Edge> getEdge(Vertex source, Vertex target);
 	
 	/**
 	 * Gets the weight of edge
 	 * @param edge
 	 * @return weight of edge
 	 */
-	E getEdgeWeight(E edge);
+	double getEdgeWeight(E edge);
 	
 	/**
 	 * Returns true if the edge is in the graph and is removed.
@@ -49,13 +51,13 @@ public interface Graph<V, E> {
 	 * Gets the set of vertices for the graph
 	 * @return set of vertices
 	 */
-	Set<V> getVertices();
+	Map<Object, Vertex> getVertices();
 	
 	/**
 	 * Gets the set of edges for the graph
 	 * @return set of edges
 	 */
-	Set<E> getEdges();
+	Set<Edge> getEdges();
 	
 	/**
 	 * Checks if the graph contains edge in it's edge set

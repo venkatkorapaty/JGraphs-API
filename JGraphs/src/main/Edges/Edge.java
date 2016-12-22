@@ -2,13 +2,15 @@ package main.Edges;
 
 import main.AbstractDataTypes.DefaultTuple;
 import main.Vertices.Vertex;
+import main.Interfaces.*;
 
 /**
  * 
  * @author Venkat Korapaty
  * @since October 11, 2016
  */
-public class Edge {
+public class Edge
+	implements IncidentToEdge {
 
 	Vertex v1;
 	Vertex v2;
@@ -41,7 +43,7 @@ public class Edge {
 	 * incident to.
 	 * @return Tuple<V, V>(v1, v2)
 	 */
-	public DefaultTuple<Vertex, Vertex> getIncidenceVertices() {
+	public DefaultTuple<Vertex, Vertex> getIncidentVertices() {
 		return new DefaultTuple<Vertex, Vertex>(this.v1, this.v2);
 	}
 
