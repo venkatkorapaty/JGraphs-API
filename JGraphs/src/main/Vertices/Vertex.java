@@ -7,7 +7,8 @@ import main.AbstractDataTypesInterfaces.*;
  * @author Venkat Korapaty
  * @since October 11, 2016
  */
-public abstract class Vertex implements Id {
+public abstract class Vertex
+	implements Id {
 
 	int id;
 	Object data;
@@ -44,7 +45,11 @@ public abstract class Vertex implements Id {
 	public int getID() {
 		return this.id;
 	}
-	
+
+	public Object getData() {
+		return this.data;
+	}
+
 	public String getName() {
 		return data.toString();
 	}

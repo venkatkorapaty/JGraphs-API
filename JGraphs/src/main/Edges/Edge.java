@@ -2,6 +2,7 @@ package main.Edges;
 
 import main.AbstractDataTypes.DefaultTuple;
 import main.Vertices.Vertex;
+import main.Interfaces.*;
 
 /**
  * 
@@ -41,7 +42,7 @@ public class Edge {
 	 * incident to.
 	 * @return Tuple<V, V>(v1, v2)
 	 */
-	public DefaultTuple<Vertex, Vertex> getIncidenceVertices() {
+	public DefaultTuple<Vertex, Vertex> getIncidentVertices() {
 		return new DefaultTuple<Vertex, Vertex>(this.v1, this.v2);
 	}
 
