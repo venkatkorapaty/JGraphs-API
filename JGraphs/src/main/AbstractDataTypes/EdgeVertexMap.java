@@ -24,6 +24,10 @@ public class EdgeVertexMap<V, E>
 		edgesAndVertices = new HashMap<Tuple<Vertex, Vertex>, List<Edge>> ();
 	}
 
+	public Map<Tuple<Vertex, Vertex>, List<Edge>> getMap() {
+		return edgesAndVertices;
+	}
+
 	public void addEdge(Vertex v1, Vertex v2, Edge edge) {
 		List<Edge> tempEdges = edgesAndVertices.get(new DefaultTuple<Vertex, Vertex>(v1, v2));
 		if (tempEdges == null) {
