@@ -1,6 +1,7 @@
 package main.AbstractDataTypes;
 
 import java.util.*;
+
 import main.Edges.*;
 import main.Vertices.*;
 import main.AbstractDataTypesInterfaces.*;
@@ -77,5 +78,16 @@ public class EdgeVertexMap<V, E>
 			}
 		}
 		return found;
+	}
+
+	@Override
+	public boolean isAdjacent(Vertex v1, Vertex v2) {
+		List<Edge> edges = edgesAndVertices.get(new DefaultTuple<Vertex, Vertex>(v1, v2));
+		if (edges != null) {
+			if (edges.size() > 0) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

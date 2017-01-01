@@ -1,6 +1,7 @@
 package test.AbstractDataTypes;
 
 import static org.junit.Assert.*;
+import java.util.*;
 import main.AbstractDataTypesInterfaces.EdgeVertexLink;
 import main.Edges.*;
 import main.Vertices.*;
@@ -53,12 +54,28 @@ public class EdgeVertexMapTest {
 
 	@Test
 	public void testAddThreeEdges() {
-		
+		edgesAndVertices.addEdge(v1,  v2, e1);
+		edgesAndVertices.addEdge(v1, v3, e2);
+		edgesAndVertices.addEdge(v3, v4, e3);
+		int result = edgesAndVertices.getMap().size();
+		int expected = 3;
+		assertEquals(expected, result);
+	}
+
+	@Test
+	public void testContainsOneEdge() {
+		edgesAndVertices.addEdge(v1, v2, e1);
+		boolean result = edgesAndVertices.isAdjacent(v1, v2);
+		assertTrue(result);
 	}
 
 	@Test
 	public void testGetEdge() {
-		fail("Not yet implemented");
+		edgesAndVertices.addEdge(v1, v2, e1);
+		List<Edge> edges = edgesAndVertices.getEdge(v1, v2);
+		Edge result = edges.get(0);
+		Edge expected = e1;
+		assertEquals(expected, result);
 	}
 
 	@Test

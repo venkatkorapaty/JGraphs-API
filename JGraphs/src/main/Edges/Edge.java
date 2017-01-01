@@ -37,6 +37,13 @@ public class Edge {
 		this.v2 = v2;
 	}
 
+	public boolean equals(Edge other) {
+		if (this.name.equals(other.name)) {
+			return true;
+		}
+		return false;
+	}
+
 	/**
 	 * Returns the vertices that the edge is
 	 * incident to.
