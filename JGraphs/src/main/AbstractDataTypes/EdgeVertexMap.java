@@ -90,4 +90,8 @@ public class EdgeVertexMap<V, E>
 		}
 		return false;
 	}
+
+	public int size() {
+		return edgesAndVertices.size();
+	}
 }

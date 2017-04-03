@@ -79,8 +79,14 @@ public class EdgeVertexMapTest {
 	}
 
 	@Test
-	public void testRemoveVertex() {
-		fail("Not yet implemented");
+	public void testRemoveOneVertexTwoEdge() {
+		edgesAndVertices.addEdge(v1, v2, e1);
+		edgesAndVertices.addEdge(v1, v3, e2);
+		edgesAndVertices.addEdge(v3, v4, e3);
+		edgesAndVertices.removeVertex(v1);
+		int result = edgesAndVertices.size();
+		int expected = 1;
+		assertEquals(expected, result);
 	}
 
 }

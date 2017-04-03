@@ -66,7 +66,7 @@ public class DefaultGraph<V, E>
 	}
 
 	public double getEdgeWeight(E edge) {
-		return 0.0;
+		return 1.0;
 	}
 
 	@Override
@@ -74,6 +74,7 @@ public class DefaultGraph<V, E>
 		Tuple<Vertex, Vertex> incidentVertices = edge.getIncidentVertices();
 		edges.remove(edge);
 		// TODO: add "removeEdge" function to EdgeVertexLink
+		edgesAndVertices.removeEdge(edge);
 		return false;
 	}
 
