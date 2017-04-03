@@ -90,7 +90,7 @@ public class UndirectedVertex
 	}
 
 	private Vertex getAdjacentVertex(Edge e) {
-		Tuple<Vertex, Vertex> incidentVertices = e.getIncidenceVertices();
+		Tuple<Vertex, Vertex> incidentVertices = e.getIncidentVertices();
 		if (this.equals(incidentVertices.getRight()))
 			return incidentVertices.getLeft();
 		else

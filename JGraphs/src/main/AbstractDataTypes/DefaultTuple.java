@@ -28,4 +28,23 @@ public class DefaultTuple<X, Y>
 	public Y getRight() {
 		return this.right;
 	}
+
+	public int hashCode() {
+		return this.left.hashCode() + this.right.hashCode();
+	}
+
+	public boolean equals(Object other) {
+		if (this == other)
+			return true;
+		if (other == null)
+			return false;
+		if (other.getClass() != getClass())
+			return false;
+		Tuple tuple = (Tuple)other;
+		if ((this.left.equals(tuple.getLeft()) && this.right.equals(tuple.getRight()))
+				|| (this.left.equals(tuple.getRight()) && this.right.equals(tuple.getLeft()))) {
+			return true;
+		}
+		return false;
+	}
 }
