@@ -43,5 +43,16 @@ public interface EdgeVertexLink<V, E> {
 	 */
 	boolean removeEdge(Edge edge);
 
+	/**
+	 * Given a vertex, remove all edges incident to it.
+	 * @param v1
+	 * @return true if vertex exists, false otherwise
+	 */
 	boolean removeVertex(Vertex v1);
+
+	/**
+	 * Returns the amount of edges
+	 * @return size of EdgeVertexMap
+	 */
+	int size();
 }
