@@ -2,6 +2,7 @@ package main.Vertices;
 
 import java.util.*;
 
+import main.AbstractDataTypesInterfaces.Tuple;
 import main.Edges.Edge;
 
 /**
@@ -37,9 +38,52 @@ public class DirectedVertex
 		this.inEdges = new HashSet<Edge>();
 	}
 
+
+	/**
+	 * Note: The vertex on the left of the tuple is assumed to be for out going edges
+	 * Vertex on the right of the tuple is assumed to be for in going edges
+	 * Returns true if added to either in or out edges, or both if edge is a loop.
+	 * Returns false if edge is already contained in both
+	 * Returns null if the edge's incident vertices is not the same
+	 * as the vertex we are connecting it to.
+	 * @param edge
+	 * @return true/false/null
+	 */
 	public boolean addEdge(Edge edge) {
-		// TODO: finish method
-		return false;
+		boolean contains = false;
+
+		Tuple<Vertex, Vertex> incidentVertices = edge.getIncidentVertices();
+		if (!isInOutEdges(edge)) {
+			if (shouldAddToOutEdges(incidentVertices.getLeft())) {
+				outEdges.add(edge);
+				contains = true;
+			}
+		}
+		
+		if (!isInInEdges(edge)) {
+			if (shouldAddToInEdges(incidentVertices.getRight())) {
+				inEdges.add(edge);
+				contains = true;
+			}
+		}
+
+		return contains;
+	}
+	
+	public boolean isInOutEdges(Edge edge) {
+		return outEdges.contains(edge);
+	}
+	
+	public boolean shouldAddToOutEdges(Vertex v1) {
+		return v1.equals(this);
+	}
+	
+	public boolean isInInEdges(Edge edge) {
+		return inEdges.contains(edge);
+	}
+	
+	public boolean shouldAddToInEdges(Vertex v1) {
+		return v1.equals(this);
 	}
 
 	public boolean removeEdge(Edge edge) {
