@@ -36,4 +36,13 @@ public class DirectedVertex
 		this.outEdges = new HashSet<Edge>();
 		this.inEdges = new HashSet<Edge>();
 	}
+
+	public boolean addEdge(Edge edge) {
+		// TODO: finish method
+		return false;
+	}
+
+	public boolean removeEdge(Edge edge) {
+		return inEdges.remove(edge) || outEdges.remove(edge);
+	}
 }

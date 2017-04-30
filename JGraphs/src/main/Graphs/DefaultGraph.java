@@ -72,8 +72,8 @@ public class DefaultGraph<V, E>
 	@Override
 	public boolean removeEdge(Edge edge) {
 		Tuple<Vertex, Vertex> incidentVertices = edge.getIncidentVertices();
+		incidentVertices.getLeft().removeEdge(edge);
 		edges.remove(edge);
-		// TODO: add "removeEdge" function to EdgeVertexLink
 		edgesAndVertices.removeEdge(edge);
 		return false;
 	}
