@@ -77,6 +77,17 @@ public class EdgeVertexMapTest {
 		Edge expected = e1;
 		assertEquals(expected, result);
 	}
+	
+	@Test
+	public void testRemoveOneVertexOneEdges() {
+		edgesAndVertices.addEdge(v1, v2, e1);
+		edgesAndVertices.addEdge(v1, v3, e2);
+		edgesAndVertices.addEdge(v3, v4, e3);
+		edgesAndVertices.removeVertex(v4);
+		int result = edgesAndVertices.size();
+		int expected = 2;
+		assertEquals(expected, result);
+	}
 
 	@Test
 	public void testRemoveOneVertexTwoEdge() {
@@ -87,6 +98,33 @@ public class EdgeVertexMapTest {
 		int result = edgesAndVertices.size();
 		int expected = 1;
 		assertEquals(expected, result);
+	}
+	
+	@Test
+	public void testRemoveNoEdges() {
+		edgesAndVertices.addEdge(v1, v2, e1);
+		edgesAndVertices.addEdge(v1, v3, e2);
+		edgesAndVertices.addEdge(v3, v4, e3);
+		edgesAndVertices.removeVertex(new UndirectedVertex(5, "alone"));
+		int result = edgesAndVertices.size();
+		int expected = 3;
+		assertEquals(expected, result);
+	}
+	
+	@Test
+	public void testIsMutated() {
+		EdgeVertexLink clone = new EdgeVertexMap();
+		clone.addEdge(v1, v2, e1);
+		clone.addEdge(v1, v3, e2);
+		clone.addEdge(v3, v4, e3);
+		
+		edgesAndVertices.addEdge(v1, v2, e1);
+		edgesAndVertices.addEdge(v1, v3, e2);
+		edgesAndVertices.addEdge(v3, v4, e3);
+		edgesAndVertices.removeVertex(new UndirectedVertex(5, "alone"));
+		
+		boolean result = edgesAndVertices.compareMaps(clone);
+		assertTrue(result);
 	}
 
 }
