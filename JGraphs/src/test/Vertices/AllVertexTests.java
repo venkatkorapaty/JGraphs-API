@@ -5,7 +5,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ VertexTest.class })
+@SuiteClasses({ UndirectedVertexTest.class })
 
 public class AllVertexTests {
 
