@@ -13,7 +13,7 @@ public class Edge {
 
 	Vertex v1;
 	Vertex v2;
-	String name = null;
+	Object data = null;
 	
 
 	/**
@@ -32,13 +32,21 @@ public class Edge {
 	 * @param v2
 	 * @param name
 	 */
-	public Edge(Vertex v1, Vertex v2, String name) {
+	public Edge(Vertex v1, Vertex v2, Object data) {
 		this.v1 = v1;
 		this.v2 = v2;
+		this.data = data;
 	}
 
-	public boolean equals(Edge other) {
-		if (this.name.equals(other.name)) {
+	public boolean equals(Object other) {
+		if (this == other)
+			return true;
+		if (other == null)
+			return false;
+		if (other.getClass() != getClass())
+			return false;
+		Edge temp = (Edge)other;
+		if (this.data.equals(temp.data)) {
 			return true;
 		}
 		return false;

@@ -24,6 +24,52 @@ public class EdgeVertexMap<V, E>
 	public EdgeVertexMap() {
 		edgesAndVertices = new HashMap<Tuple<Vertex, Vertex>, List<Edge>> ();
 	}
+	
+	public boolean compareMaps(Object other) {
+		if (this == other)
+			return true;
+		if (other == null)
+			return false;
+		if (other.getClass() != getClass())
+			return false;
+		EdgeVertexMap<Vertex, Edge> temp = (EdgeVertexMap<Vertex, Edge>)other;
+		try{
+			if (!bothContainsSameKeyValuePair(temp)) {
+				return false;
+			}
+			if (!bothContainSameKeys(temp)) {
+				return false;
+			}
+	    } catch (NullPointerException np) {
+	        return false;
+	    }
+	    return true;
+	}
+
+	private boolean bothContainsSameKeyValuePair(EdgeVertexMap<Vertex, Edge> other) throws NullPointerException {
+		Map<Tuple<Vertex, Vertex>, List<Edge>> current = this.getMap();
+    	Map<Tuple<Vertex, Vertex>, List<Edge>> otherCurrent = other.getMap();
+        for (Tuple<Vertex, Vertex> vertexPair : other.getMap().keySet())
+        {
+        	
+            if (!current.get(vertexPair).equals(otherCurrent.get(vertexPair))) {
+                return false;
+            }
+        }
+        return true;
+	}
+	
+	private boolean bothContainSameKeys(EdgeVertexMap<Vertex, Edge> other) throws NullPointerException {
+		Map<Tuple<Vertex, Vertex>, List<Edge>> current = this.getMap();
+    	Map<Tuple<Vertex, Vertex>, List<Edge>> otherCurrent = other.getMap();
+    	for (Tuple<Vertex, Vertex> vertexPair : current.keySet())
+        {
+            if (!otherCurrent.containsKey(vertexPair)) {
+                return false;
+            }
+        }
+    	return true;
+	}
 
 	public Map<Tuple<Vertex, Vertex>, List<Edge>> getMap() {
 		return edgesAndVertices;

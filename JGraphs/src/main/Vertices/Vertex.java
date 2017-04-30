@@ -1,6 +1,7 @@
 package main.Vertices;
 
 import main.AbstractDataTypesInterfaces.*;
+import main.Edges.*;
 
 /**
  * 
@@ -66,4 +67,8 @@ public abstract class Vertex
 	public String getName() {
 		return data.toString();
 	}
+	
+	public abstract boolean addEdge(Edge edge);
+	
+	public abstract boolean removeEdge(Edge edge);
 }
