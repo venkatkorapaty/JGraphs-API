@@ -8,7 +8,7 @@ import org.junit.Test;
 import main.Vertices.*;
 import java.util.*;
 
-public class VertexTest {
+public class UndirectedVertexTest {
 
 	Vertex uv1;
 	Vertex uv2;
