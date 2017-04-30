@@ -71,11 +71,16 @@ public class EdgeVertexMap<V, E>
 
 	public boolean removeVertex(Vertex v1) {
 		boolean found = false;
+		List<Tuple<Vertex, Vertex>> verticesToRemove = new ArrayList<Tuple<Vertex, Vertex>>();
 		for (Tuple<Vertex, Vertex> tuple: edgesAndVertices.keySet()) {
 			if (tuple.getLeft().equals(v1) || tuple.getRight().equals(v1)) {
-				edgesAndVertices.remove(tuple);
+				verticesToRemove.add(tuple);
 				found = true;
 			}
+		}
+		
+		for (Tuple<Vertex, Vertex> tuple: verticesToRemove) {
+			edgesAndVertices.remove(tuple);
 		}
 		return found;
 	}
