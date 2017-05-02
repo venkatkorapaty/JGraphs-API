@@ -53,7 +53,7 @@ public abstract class Vertex
 		if (other.getClass() != getClass())
 			return false;
 		Vertex v1 = (Vertex)other;
-		return this.data.equals(v1.data) && this.id == v1.id;
+		return this.data.equals(v1.data); // && this.id == v1.id;
 	}
 	
 	public int getID() {
