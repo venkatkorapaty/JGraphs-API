@@ -47,21 +47,20 @@ public class DirectedVertex
 	 * Returns null if the edge's incident vertices is not the same
 	 * as the vertex we are connecting it to.
 	 * @param edge
-	 * @return true/false/null
+	 * @return true/false
 	 */
 	public boolean addEdge(Edge edge) {
 		boolean contains = false;
 
-		Tuple<Vertex, Vertex> incidentVertices = edge.getIncidentVertices();
 		if (!isInOutEdges(edge)) {
-			if (shouldAddToOutEdges(incidentVertices.getLeft())) {
+			if (shouldAddToOutEdges(edge.getSource())) {
 				outEdges.add(edge);
 				contains = true;
 			}
 		}
 		
 		if (!isInInEdges(edge)) {
-			if (shouldAddToInEdges(incidentVertices.getRight())) {
+			if (shouldAddToInEdges(edge.getTarget())) {
 				inEdges.add(edge);
 				contains = true;
 			}
