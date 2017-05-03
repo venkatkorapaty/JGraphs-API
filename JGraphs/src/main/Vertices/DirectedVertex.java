@@ -73,7 +73,7 @@ public class DirectedVertex
 		return outEdges.contains(edge);
 	}
 	
-	public boolean shouldAddToOutEdges(Vertex v1) {
+	private boolean shouldAddToOutEdges(Vertex v1) {
 		return v1.equals(this);
 	}
 	
@@ -81,7 +81,7 @@ public class DirectedVertex
 		return inEdges.contains(edge);
 	}
 	
-	public boolean shouldAddToInEdges(Vertex v1) {
+	private boolean shouldAddToInEdges(Vertex v1) {
 		return v1.equals(this);
 	}
 

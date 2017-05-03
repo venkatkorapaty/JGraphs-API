@@ -24,7 +24,7 @@ public class Edge {
 	public Edge(Vertex v1, Vertex v2) {
 		this.v1 = v1;
 		this.v2 = v2;
-		this.weight = 1;
+		this.weight = 1.0;
 	}
 	
 	/**
