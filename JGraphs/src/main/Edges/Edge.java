@@ -11,9 +11,9 @@ import main.Interfaces.*;
  */
 public class Edge {
 
-	Vertex v1;
-	Vertex v2;
-	Object data = null;
+	private Vertex v1;
+	private Vertex v2;
+	private double weight;
 	
 
 	/**
@@ -24,6 +24,7 @@ public class Edge {
 	public Edge(Vertex v1, Vertex v2) {
 		this.v1 = v1;
 		this.v2 = v2;
+		this.weight = 1;
 	}
 	
 	/**
@@ -32,10 +33,10 @@ public class Edge {
 	 * @param v2
 	 * @param name
 	 */
-	public Edge(Vertex v1, Vertex v2, Object data) {
+	public Edge(Vertex v1, Vertex v2, double weight) {
 		this.v1 = v1;
 		this.v2 = v2;
-		this.data = data;
+		this.weight = weight;
 	}
 
 	public boolean equals(Object other) {
@@ -46,10 +47,14 @@ public class Edge {
 		if (other.getClass() != getClass())
 			return false;
 		Edge temp = (Edge)other;
-		if (this.data.equals(temp.data)) {
+		if (this.getWeight() == temp.getWeight()) {
 			return true;
 		}
 		return false;
+	}
+
+	public double getWeight() {
+		return this.weight;
 	}
 
 	/**
