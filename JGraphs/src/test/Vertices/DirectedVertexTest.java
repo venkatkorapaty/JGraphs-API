@@ -43,7 +43,7 @@ public class DirectedVertexTest {
 
 	@Test
 	public void test() {
-		Vertex dv4 = new DirectedVertex(4, "test");
+		Vertex dv4 = new DirectedVertex(1, "test");
 		assertTrue(dv1.equals(dv4));
 	}
 
